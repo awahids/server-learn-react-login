@@ -33,7 +33,7 @@ router.get('/google', passport.authenticate('google', {
 }))
 
 router.get('/google/callback', passport.authenticate('google', {
-  successRedirect: 'http://locahost:3002/',
+  successRedirect: 'http://localhost:3002/',
   failureRedirect: '/login/failure'
 }))
 

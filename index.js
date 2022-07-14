@@ -1,6 +1,7 @@
 const cookieSession = require('cookie-session');
 const express = require('express');
 const passport = require('passport');
+const passportSetup = require('./passport');
 const cors = require('cors');
 const app = express();
 

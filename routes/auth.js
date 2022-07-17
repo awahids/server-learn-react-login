@@ -25,7 +25,7 @@ router.get('/logout', (req, res) => {
     success: true,
     message: 'Logout successful',
   });
-  res.redirect('http://localhost:3002/');
+  res.redirect('http://localhost:3000/');
 })
 
 router.get('/google', passport.authenticate('google', {
@@ -33,7 +33,25 @@ router.get('/google', passport.authenticate('google', {
 }))
 
 router.get('/google/callback', passport.authenticate('google', {
-  successRedirect: 'http://localhost:3002/',
+  successRedirect: 'http://localhost:3000/',
+  failureRedirect: '/login/failure'
+}))
+
+router.get('/github', passport.authenticate('github', {
+  scope: ['profile']
+}))
+
+router.get('/github/callback', passport.authenticate('github', {
+  successRedirect: 'http://localhost:3000/',
+  failureRedirect: '/login/failure'
+}))
+
+router.get('/twitter', passport.authenticate('twitter', {
+  scope: ['profile']
+}))
+
+router.get('/twitter/callback', passport.authenticate('twitter', {
+  successRedirect: 'http://localhost:3000/',
   failureRedirect: '/login/failure'
 }))
 

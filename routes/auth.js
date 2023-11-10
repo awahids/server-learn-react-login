@@ -25,7 +25,7 @@ router.get('/logout', (req, res) => {
     success: true,
     message: 'Logout successful',
   });
-  res.redirect('http://localhost:3000/');
+  res.redirect('https://learn-react-login-page.vercel.app/');
 })
 
 router.get('/google', passport.authenticate('google', {
@@ -33,7 +33,7 @@ router.get('/google', passport.authenticate('google', {
 }))
 
 router.get('/google/callback', passport.authenticate('google', {
-  successRedirect: 'http://localhost:3000/',
+  successRedirect: 'https://learn-react-login-page.vercel.app/',
   failureRedirect: '/login/failure'
 }))
 
@@ -42,7 +42,7 @@ router.get('/github', passport.authenticate('github', {
 }))
 
 router.get('/github/callback', passport.authenticate('github', {
-  successRedirect: 'http://localhost:3000/',
+  successRedirect: 'https://learn-react-login-page.vercel.app/',
   failureRedirect: '/login/failure'
 }))
 
@@ -51,7 +51,7 @@ router.get('/twitter', passport.authenticate('twitter', {
 }))
 
 router.get('/twitter/callback', passport.authenticate('twitter', {
-  successRedirect: 'http://localhost:3000/',
+  successRedirect: 'https://learn-react-login-page.vercel.app/',
   failureRedirect: '/login/failure'
 }))
 
